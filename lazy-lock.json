@@ -11,9 +11,11 @@
   "nvim-cmp": { "branch": "main", "commit": "b5311ab3ed9c846b585c0c15b7559be131ec4be9" },
   "nvim-treesitter": { "branch": "master", "commit": "7bbed4b548d9a81c14351bda93d16336edefd067" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
+  "snacks.nvim": { "branch": "main", "commit": "bc0630e43be5699bb94dadc302c0d21615421d93" },
   "tabout.nvim": { "branch": "master", "commit": "9a3499480a8e53dcaa665e2836f287e3b7764009" },
   "telescope.nvim": { "branch": "master", "commit": "a4ed82509cecc56df1c7138920a1aeaf246c0ac5" },
   "transparent.nvim": { "branch": "main", "commit": "8a2749a2fa74f97fe6557f61b89ac7fd873f3c21" },
   "undotree": { "branch": "master", "commit": "b951b87b46c34356d44aa71886aecf9dd7f5788a" },
-  "vague.nvim": { "branch": "main", "commit": "982453f671332ce0240a15be5eb223d32f877e06" }
+  "vague.nvim": { "branch": "main", "commit": "982453f671332ce0240a15be5eb223d32f877e06" },
+  "yazi.nvim": { "branch": "main", "commit": "8418e7028f91feacffcf75236fd4e93a5a3fe911" }
 }
