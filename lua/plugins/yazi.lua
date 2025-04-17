@@ -16,11 +16,11 @@ return {
       "<cmd>Yazi cwd<cr>",
       desc = "Open the file manager in nvim's working directory",
     },
-    {
-      "<c-up>",
-      "<cmd>Yazi toggle<cr>",
-      desc = "Resume the last yazi session",
-    },
+    -- {
+    --   "<c-y>t",
+    --   "<cmd>Yazi toggle<cr>",
+    --   desc = "Resume the last yazi session",
+    -- },
   },
   opts = {
     open_for_directories = false,
@@ -28,10 +28,6 @@ return {
     keymaps = {
       show_help = "5",
     },
-    on_open = function(path)
-      local dir = vim.fn.fnamemodify(path, ":p:h")
-      vim.cmd("cd " .. vim.fn.fnameescape(dir))
-    end,
   },
   init = function()
     vim.g.loaded_netrwPlugin = 1

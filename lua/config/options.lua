@@ -30,6 +30,3 @@ opt.wrap = false -- disable line wrapping
 
 
 
-
-opt.laststatus = 3
-
