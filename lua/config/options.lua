@@ -21,8 +21,8 @@ opt.sidescrolloff = 10
 
 
 -- indentation and formating
-opt.tabstop = 4
-opt.shiftwidth = 4
+opt.tabstop = 2
+opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
 opt.autoindent = true

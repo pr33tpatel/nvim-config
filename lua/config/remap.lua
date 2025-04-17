@@ -55,8 +55,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 --resize windows
 vim.api.nvim_set_keymap("n", "<C-down>", "<cmd>resize +1<CR>", opts)
 vim.api.nvim_set_keymap("n", "<C-up>", "<cmd>resize -1<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-left>", "<cmd>vertical resize -1<CR>", opts)
-vim.api.nvim_set_keymap("n", "<C-right>","<cmd>vertical resize +1<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-right>", "<cmd>vertical resize -1<CR>", opts)
+vim.api.nvim_set_keymap("n", "<C-left>","<cmd>vertical resize +1<CR>", opts)
 
 -- save file
 keymap("n", "<leader>w", "<cmd>w<CR>", opts)
