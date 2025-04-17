@@ -17,7 +17,7 @@ opt.signcolumn = "yes"
 opt.cursorline = true
 opt.termguicolors = true
 opt.scrolloff = 10
-opt.sidescrolloff = 8
+opt.sidescrolloff = 10
 
 
 -- indentation and formating

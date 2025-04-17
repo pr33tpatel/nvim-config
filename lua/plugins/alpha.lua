@@ -25,7 +25,7 @@ return {
             dashboard.button( "e", "  > New file" , ":ene <BAR> startinsert <CR>"),
             dashboard.button( "f", "  > Find file", ":cd ~/| Telescope find_files<CR>"),
             dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
-            dashboard.button( "s", "  > Settings" , ":e $MYVIMRC | :cd %:p:h | split . | wincmd k | pwd<CR>"),
+            dashboard.button( "s", "  > Settings" , ":e ~/.config/nvim/lua/config/options.lua"),
             dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
         }
          alpha.setup(dashboard.opts)
