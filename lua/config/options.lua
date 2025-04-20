@@ -29,4 +29,9 @@ opt.autoindent = true
 opt.wrap = false -- disable line wrapping
 
 
-
+-- highlight on yank
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})
