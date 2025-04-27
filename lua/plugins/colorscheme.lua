@@ -21,7 +21,7 @@ return {
 
 					-- keywords
 					keywords = "none",
-					keyword_return = "none",
+					keyword_return = "italic",
 					keywords_loop = "none",
 					keywords_label = "none",
 					keywords_exception = "none",
@@ -34,17 +34,26 @@ return {
 				},
 				colors = {
 					 func = "#bc96b0",
-					 keyword = "#787bab",
-					 --keyword = "#8588b3",
+				   -- keyword = "#8be9fd",
+				   keyword = "#787bab",
+				       variables = "#ffffff",
+				     --  keyword = "#8588b3",
 					 -- string = "#d4bd98",
 					 string = "#8a739a",
 					 -- string = "#f2e6ff",
 					-- -- number = "#f2e6ff",
 					-- -- string = "#d8d5b1",
 					 number = "#8f729e",
-					-- -- type = "#dcaed7",
 				},
+
 			})
 		end,
 	},
+  {
+    "folke/tokyonight.nvim"
+  },
+  {
+    "binhtran432k/dracula.nvim"
+  },
+
 }

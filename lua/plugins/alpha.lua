@@ -27,7 +27,7 @@ return {
             dashboard.button( "f", "  > Find file", ":Telescope find_files<CR>"),
             dashboard.button( "h", "󱎱  > Find files from home", ":lua require('telescope.builtin').find_files({cwd = '~/'})<CR>"),
             dashboard.button( "r", "  > Recent"   , ":Telescope oldfiles<CR>"),
-            dashboard.button( "s", "  > Settings" , ":e ~/.config/nvim/lua/config/options.lua"),
+            dashboard.button( "s", "  > Settings" , ":e ~/.config/nvim/lua/config/options.lua <CR>"),
             dashboard.button( "q", "  > Quit NVIM", ":qa<CR>"),
         }
          alpha.setup(dashboard.opts)

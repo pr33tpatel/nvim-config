@@ -26,7 +26,7 @@ keymap("n", "<leader>fz", "<cmd>Telescope zoxide list<CR>", opts)
 keymap("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
 
 -- file navigation
-keymap("n", "<leader>ep", "<cmd>Ex<CR>", opts)
+-- keymap("n", "<leader>ep", "<cmd>Ex<CR>", opts)
 
 -- yank to system clipboard
 vim.api.nvim_set_keymap("n", "<leader>y", '"+y', opts)

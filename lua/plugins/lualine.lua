@@ -12,6 +12,27 @@ return {
     require("lualine").setup({
       options = {
         theme = custom_vague, -- <- corrected here
+        -- section_separators = "",
+        component_separators = "",
+      },
+      sections = {
+        -- lualine_a = {'mode'}, lualine_c = {'filename'},
+        lualine_a = {'mode'},
+        lualine_b = {
+          { 'buffers',
+            buffers_color = {
+              active = { fg = '#FFFFFF', bg = '#005F87', gui = 'bold' },
+              inactive = { fg = '#888888', bg = '#222222' }
+            },
+            alternate_file = "",
+            modified = "x"
+          }
+        },        -- lualine_c = {'filename'},
+        lualine_c = {'branch', 'diff', 'diagnostics'},
+        lualine_x = {'encoding', 'fileformat', 'filetype',},
+        lualine_y = {'progress'},
+        lualine_z = {'location'}
+
       },
     })
   end,
