@@ -7,6 +7,8 @@ return{
     vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
+    vim.g.nvim_tree_respect_buf_cwd = 1
+
     nvimtree.setup({
       view = {
         width = 35,
@@ -30,6 +32,13 @@ return{
 
       git = {
         ignore = false
+      },
+
+      -- used to open nvim-tree in currently opened file
+      update_cwd = true,
+      update_focused_file = {
+        enable = true,
+        update_cwd = true,
       },
     })
 
