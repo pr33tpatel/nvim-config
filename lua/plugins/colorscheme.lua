@@ -15,7 +15,7 @@ return {
 					conditionals = "none",
 					functions = "none",
 					headings = "bold",
-					operators = "italic",
+					operators = "none",
 					strings = "none",
 					variables = "none",
 
@@ -32,18 +32,18 @@ return {
 					builtin_types = "none",
 					builtin_variables = "none",
 				},
-				colors = {
-					 func = "#bc96b0",
-				   -- keyword = "#8be9fd",
-				   keyword = "#787bab",
-				       variables = "#ffffff",
-				     --  keyword = "#8588b3",
-					 -- string = "#d4bd98",
-					 string = "#8a739a",
-					 -- string = "#f2e6ff",
-					-- -- number = "#f2e6ff",
-					-- -- string = "#d8d5b1",
-					 number = "#8f729e",
+        colors = {
+          --  func = "#bc96b0",
+          keyword = "#8be9fd",
+          --   -- keyword = "#787bab",
+          variables = "#ffffff",
+          --     --  keyword = "#8588b3",
+          string = "#bc96b0",
+          --           string = "#8a739a",
+          -- string = "#f2e6ff",
+          -- --     -- number = "#f2e6ff",
+          -- string = "#d8d5b1",
+          number = "#8f729e",
 				},
 
 			})
@@ -57,3 +57,5 @@ return {
   },
 
 }
+
+

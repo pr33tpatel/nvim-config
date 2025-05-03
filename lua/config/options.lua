@@ -26,7 +26,11 @@ opt.shiftwidth = 2
 opt.expandtab = true
 opt.smartindent = true
 opt.autoindent = true
-opt.wrap = false -- disable line wrapping
+opt.ignorecase = true
+opt.smartcase = true
+opt.wrap = true -- enable line wrapping
+-- opt.wrap = false --disable line wrapping
+
 
 
 -- highlight on yank
