@@ -9,8 +9,26 @@ return {
     "saadparwaiz1/cmp_luasnip",
     "rafamadriz/friendly-snippets",
     "onsails/lspkind.nvim",
+    -- Add Copilot dependencies
+    {
+      "zbirenbaum/copilot-cmp",
+      dependencies = {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        config = function()
+          require("copilot").setup({
+            suggestion = { enabled = false },
+            panel = { enabled = false },
+          })
+        end,
+      },
+      config = function()
+        require("copilot_cmp").setup()
+      end,
+    },
   },
   config = function()
+
     local cmp = require("cmp")
     local luasnip = require("luasnip")
     local lspkind = require("lspkind")
@@ -32,6 +50,7 @@ return {
         ["<CR>"] = cmp.mapping.confirm({ select = false }),
       }),
       sources = cmp.config.sources({
+        { name = "copilot" },
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "buffer" },
@@ -41,6 +60,10 @@ return {
         format = lspkind.cmp_format({
           maxwidth = 50,
           ellipsis_char = "...",
+          -- add coplilot icon to formatting
+          symbol_map = {
+            Copilot = "",
+          }
         }),
       },
     })

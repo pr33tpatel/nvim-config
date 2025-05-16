@@ -24,12 +24,14 @@ opt.sidescrolloff = 10
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.expandtab = true
+
 opt.smartindent = true
 opt.autoindent = true
+opt.cindent = true
 opt.ignorecase = true
 opt.smartcase = true
-opt.wrap = true -- enable line wrapping
--- opt.wrap = false --disable line wrapping
+-- opt.wrap = true -- enable line wrapping
+opt.wrap = false --disable line wrapping
 
 
 
