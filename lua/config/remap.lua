@@ -28,6 +28,23 @@ keymap("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
 -- file navigation
 -- keymap("n", "<leader>ep", "<cmd>Ex<CR>", opts)
 
+-- toggle Copilot
+-- copliot, help me display a message when copilot is enabled or disabled
+-- copilot, help me display a message when copilot is enabled or disabled on the line below
+keymap("n", "<leader>cpt", "<cmd>Copilot toggle<CR>", { noremap = true, silent = false })
+-- keymap("n", "<leader>cpd", "<cmd>Copilot disable<CR>", {function()
+--   vim.api.nvim_echo({{"Copilot disabled", "WarningMsg"}}, false, {})
+-- end, noremap = true, silent = false})
+vim.keymap.set("n", "<leader>cpd", function()
+  vim.cmd("Copilot disable")
+  vim.api.nvim_echo({{"Copilot has been disabled", "WarningMsg"}}, false, {})
+end, { noremap = true, desc = "Disable Copilot" })
+
+vim.keymap.set("n", "<leader>cpe", function()
+  vim.cmd("Copilot enable")
+  vim.api.nvim_echo({{"Copilot has been enabled", "WarningMsg"}}, false, {})
+end, { noremap = true, desc = "Enable Copilot" })
+
 -- yank to system clipboard
 vim.api.nvim_set_keymap("n", "<leader>y", '"+y', opts)
 vim.api.nvim_set_keymap("v", "<leader>y", '"+y', opts)
