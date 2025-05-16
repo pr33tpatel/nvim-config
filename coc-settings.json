@@ -1,0 +1,9 @@
+{
+  "pyright.inlayHints.functionReturnTypes": true,
+  "pyright.inlayHints.variableTypes": true,
+  "pyright.inlayHints.parameterTypes": true,
+  "pyright.inlayHints.functionReturnTypes ": {
+    "color": "#9667cf",
+    "fontStyle": "italic"
+  },
+}

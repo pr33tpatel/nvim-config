@@ -102,6 +102,20 @@ return {
         on_attach = on_attach
       })
 
+      require("lspconfig").pyright.setup({
+        capabilities = capabilities,
+        settings = {
+          python = {
+            analysis = {
+              typeCheckingMode = "basic",
+              autoImportCompletions = true,
+              useLibraryCodeForTypes = true
+            }
+          }
+        },
+        on_attach = on_attach
+      })
+
       -- Toggle keymap (works for all buffers)
       vim.keymap.set("n", "<leader>th", function()
         local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
@@ -109,6 +123,39 @@ return {
       end, { desc = "Toggle inlay hints" })
     end
   },
+  {
+    -- Toggle Keymap for Coc
+    vim.keymap.set("n", "<leader>cth", function()
+      vim.cmd(":CocCommand document.toggleInlayHint")
+      vim.notify("Toggled inlay hints for CoC", vim.log.levels.INFO)
+    end, { noremap = true, silent = false, desc = "Toggle inlay hints (CoC)" }),
+  },
+  --  {
+  --   -- Toggle keymap that works for both native LSP and CoC
+  --   vim.keymap.set("n", "<leader>th", function()
+  --     -- Check if current buffer has CoC enabled for Python
+  --     local filetype = vim.bo.filetype
+  --     if filetype == "python" and vim.fn.exists("*coc#rpc#ready") == 1 and vim.fn.coc#rpc#ready() then        -- Toggle CoC inlay hints for Python
+  --       if vim.g.coc_pyright_inlay_hints_enabled == nil then
+  --         vim.g.coc_pyright_inlay_hints_enabled = true
+  --       end
+  --       if vim.g.coc_pyright_inlay_hints_enabled then
+  --         vim.fn.CocAction("runCommand", "pyright.disableInlayHints")
+  --         vim.g.coc_pyright_inlay_hints_enabled = false
+  --         print("CoC Python inlay hints disabled")
+  --       else
+  --         vim.fn.CocAction("runCommand", "pyright.enableInlayHints")
+  --         vim.g.coc_pyright_inlay_hints_enabled = true
+  --         print("CoC Python inlay hints enabled")
+  --       end
+  --     else
+  --       -- Use native LSP inlay hint toggle for other filetypes
+  --       local enabled = vim.lsp.inlay_hint.is_enabled({ bufnr = 0 })
+  --       vim.lsp.inlay_hint.enable(not enabled, { bufnr = 0 })
+  --     end
+  --   end, { desc = "Toggle inlay hints (LSP and CoC)" })
+  -- },
+
   {
     vim.diagnostic.config({
       virtual_text = {
