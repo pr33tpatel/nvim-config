@@ -29,12 +29,8 @@ keymap("n", "<leader>fh", "<cmd>Telescope help_tags<CR>", opts)
 -- keymap("n", "<leader>ep", "<cmd>Ex<CR>", opts)
 
 -- toggle Copilot
--- copliot, help me display a message when copilot is enabled or disabled
--- copilot, help me display a message when copilot is enabled or disabled on the line below
 keymap("n", "<leader>cpt", "<cmd>Copilot toggle<CR>", { noremap = true, silent = false })
--- keymap("n", "<leader>cpd", "<cmd>Copilot disable<CR>", {function()
---   vim.api.nvim_echo({{"Copilot disabled", "WarningMsg"}}, false, {})
--- end, noremap = true, silent = false})
+
 vim.keymap.set("n", "<leader>cpd", function()
   vim.cmd("Copilot disable")
   vim.api.nvim_echo({{"Copilot has been disabled", "WarningMsg"}}, false, {})
@@ -44,6 +40,41 @@ vim.keymap.set("n", "<leader>cpe", function()
   vim.cmd("Copilot enable")
   vim.api.nvim_echo({{"Copilot has been enabled", "WarningMsg"}}, false, {})
 end, { noremap = true, desc = "Enable Copilot" })
+
+vim.keymap.set("n", "<leader>ta", function()
+  local cmp = require("cmp")
+  local sources = cmp.get_config().sources
+  
+  -- Check if copilot is in the sources
+  local has_copilot = false
+  for _, source in ipairs(sources) do
+    if source.name == "copilot" then
+      has_copilot = true
+      break
+    end
+  end
+  
+  -- Create new sources list with or without copilot
+  local new_sources = {}
+  if has_copilot then
+    for _, source in ipairs(sources) do
+      if source.name ~= "copilot" then
+        table.insert(new_sources, source)
+      end
+    end
+    vim.notify("Copilot completions disabled", vim.log.levels.INFO)
+  else
+    table.insert(new_sources, { name = "copilot" })
+    for _, source in ipairs(sources) do
+      table.insert(new_sources, source)
+    end
+    vim.notify("Copilot completions enabled", vim.log.levels.INFO)
+  end
+  
+  cmp.setup({ sources = new_sources })
+end, { desc = "Toggle Copilot in completion sources" })
+
+
 
 -- yank to system clipboard
 vim.api.nvim_set_keymap("n", "<leader>y", '"+y', opts)
