@@ -3,7 +3,7 @@
   "pyright.inlayHints.variableTypes": true,
   "pyright.inlayHints.parameterTypes": true,
   "pyright.inlayHints.functionReturnTypes ": {
-    "color": "#9667cf",
+    "color": "#b386eb",
     "fontStyle": "italic"
   },
 }
