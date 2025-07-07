@@ -102,6 +102,23 @@ return {
         on_attach = on_attach
       })
 
+      -- typst
+      require("lspconfig").tinymist.setup({
+        capabilities = capabilities,
+        settings = {
+          formatterMode = "typestyle",
+          exportPdf = "never",
+          typst = {
+            InlayHints = {
+              Enabled = true, 
+              ParameterNames = true,
+              DeducedTypes = true
+            }
+          }
+        }, on_attach = on_attach
+      })
+
+      --python 
       require("lspconfig").pyright.setup({
         capabilities = capabilities,
         settings = {
