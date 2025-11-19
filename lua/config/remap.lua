@@ -13,8 +13,8 @@ keymap("v", "K", ":m '<-2<CR>gv=gv")
 keymap("n", "<C-d>", "<C-d>zz") -- keep half page down in middle
 keymap("n", "<C-u>", "<C-u>zz")
 
-keymap("n", "n", "nzzzv") -- keep search results in  middle
-keymap("n", "N", "Nzzzv")
+-- keymap("n", "n", "nzzzv") -- keep search results in  middle
+-- keymap("n", "N", "Nzzzv")
 
 -- undotree keybinds
 keymap("n", "<leader>u", ":UndotreeToggle<CR>", { noremap = true, silent = false })
@@ -44,7 +44,7 @@ end, { noremap = true, desc = "Enable Copilot" })
 vim.keymap.set("n", "<leader>ta", function()
   local cmp = require("cmp")
   local sources = cmp.get_config().sources
-  
+
   -- Check if copilot is in the sources
   local has_copilot = false
   for _, source in ipairs(sources) do
@@ -53,7 +53,7 @@ vim.keymap.set("n", "<leader>ta", function()
       break
     end
   end
-  
+
   -- Create new sources list with or without copilot
   local new_sources = {}
   if has_copilot then
@@ -70,7 +70,7 @@ vim.keymap.set("n", "<leader>ta", function()
     end
     vim.notify("Copilot completions enabled", vim.log.levels.INFO)
   end
-  
+
   cmp.setup({ sources = new_sources })
 end, { desc = "Toggle Copilot in completion sources" })
 
